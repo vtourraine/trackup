@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1FE9565E1A7C27FE0073AA63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE9565D1A7C27FE0073AA63 /* main.m */; };
+		1F15EB171A7EDFEA00549BEB /* TrackupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EB151A7EDFEA00549BEB /* TrackupParser.m */; };
+		1F15EB1B1A7EE06200549BEB /* TrackupDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EB191A7EE06200549BEB /* TrackupDocument.m */; };
+		1FAACC5A1A8F5D96000D938A /* TrackupParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAACC591A8F5D96000D938A /* TrackupParserTests.m */; };
+		1FAACC5D1A8F9FAC000D938A /* TrackupExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAACC5C1A8F9FAC000D938A /* TrackupExporter.m */; };
+		1FAACC5F1A8FA013000D938A /* TrackupExporterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAACC5E1A8FA013000D938A /* TrackupExporterTests.m */; };
 		1FE9566E1A7C29590073AA63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE9566D1A7C29590073AA63 /* AppDelegate.m */; };
 		1FE956701A7C29590073AA63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE9566F1A7C29590073AA63 /* main.m */; };
 		1FE956731A7C295B0073AA63 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE956721A7C295B0073AA63 /* ViewController.m */; };
@@ -16,22 +20,28 @@
 		1FE9567B1A7C295D0073AA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956791A7C295D0073AA63 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1FE956581A7C27FD0073AA63 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
+/* Begin PBXContainerItemProxy section */
+		1FAACC541A8F5D6C000D938A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FE956521A7C27FC0073AA63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FE956671A7C29550073AA63;
+			remoteInfo = "Trackup Editor";
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1FE9565A1A7C27FE0073AA63 /* trackup */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = trackup; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FE9565D1A7C27FE0073AA63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1FE956681A7C29550073AA63 /* TrackupEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrackupEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F15EB141A7EDFEA00549BEB /* TrackupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackupParser.h; path = Classes/TrackupParser.h; sourceTree = "<group>"; };
+		1F15EB151A7EDFEA00549BEB /* TrackupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupParser.m; path = Classes/TrackupParser.m; sourceTree = "<group>"; };
+		1F15EB181A7EE06200549BEB /* TrackupDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackupDocument.h; path = Classes/TrackupDocument.h; sourceTree = "<group>"; };
+		1F15EB191A7EE06200549BEB /* TrackupDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupDocument.m; path = Classes/TrackupDocument.m; sourceTree = "<group>"; };
+		1FAACC4E1A8F5D6C000D938A /* trackup-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "trackup-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FAACC511A8F5D6C000D938A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FAACC591A8F5D96000D938A /* TrackupParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupParserTests.m; path = "trackup-tests/Tests/TrackupParserTests.m"; sourceTree = SOURCE_ROOT; };
+		1FAACC5B1A8F9FAC000D938A /* TrackupExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackupExporter.h; path = Classes/TrackupExporter.h; sourceTree = "<group>"; };
+		1FAACC5C1A8F9FAC000D938A /* TrackupExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupExporter.m; path = Classes/TrackupExporter.m; sourceTree = "<group>"; };
+		1FAACC5E1A8FA013000D938A /* TrackupExporterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupExporterTests.m; path = "trackup-tests/Tests/TrackupExporterTests.m"; sourceTree = SOURCE_ROOT; };
+		1FE956681A7C29550073AA63 /* Trackup Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trackup Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE9566B1A7C29580073AA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE9566C1A7C29590073AA63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1FE9566D1A7C29590073AA63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,12 +52,10 @@
 		1FE956751A7C295B0073AA63 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		1FE956771A7C295C0073AA63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FE9567A1A7C295D0073AA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1FE956851A7C29600073AA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1FE956861A7C29600073AA63 /* TrackupEditorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackupEditorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1FE956571A7C27FD0073AA63 /* Frameworks */ = {
+		1FAACC4B1A8F5D6C000D938A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,12 +72,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FAACC4F1A8F5D6C000D938A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1FAACC501A8F5D6C000D938A /* Supporting Files */,
+			);
+			name = Tests;
+			path = "trackup-tests";
+			sourceTree = "<group>";
+		};
+		1FAACC501A8F5D6C000D938A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1FAACC511A8F5D6C000D938A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1FE956511A7C27FB0073AA63 = {
 			isa = PBXGroup;
 			children = (
-				1FE9565C1A7C27FE0073AA63 /* trackup */,
-				1FE956691A7C29570073AA63 /* TrackupEditor */,
-				1FE956831A7C29600073AA63 /* TrackupEditorTests */,
+				1FE9565C1A7C27FE0073AA63 /* Core */,
+				1FE956691A7C29570073AA63 /* Trackup Editor */,
+				1FAACC4F1A8F5D6C000D938A /* Tests */,
 				1FE9565B1A7C27FE0073AA63 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,21 +102,29 @@
 		1FE9565B1A7C27FE0073AA63 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FE9565A1A7C27FE0073AA63 /* trackup */,
-				1FE956681A7C29550073AA63 /* TrackupEditor.app */,
+				1FE956681A7C29550073AA63 /* Trackup Editor.app */,
+				1FAACC4E1A8F5D6C000D938A /* trackup-tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1FE9565C1A7C27FE0073AA63 /* trackup */ = {
+		1FE9565C1A7C27FE0073AA63 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1FE9565D1A7C27FE0073AA63 /* main.m */,
+				1F15EB181A7EE06200549BEB /* TrackupDocument.h */,
+				1F15EB191A7EE06200549BEB /* TrackupDocument.m */,
+				1F15EB141A7EDFEA00549BEB /* TrackupParser.h */,
+				1F15EB151A7EDFEA00549BEB /* TrackupParser.m */,
+				1FAACC591A8F5D96000D938A /* TrackupParserTests.m */,
+				1FAACC5B1A8F9FAC000D938A /* TrackupExporter.h */,
+				1FAACC5C1A8F9FAC000D938A /* TrackupExporter.m */,
+				1FAACC5E1A8FA013000D938A /* TrackupExporterTests.m */,
 			);
+			name = Core;
 			path = trackup;
 			sourceTree = "<group>";
 		};
-		1FE956691A7C29570073AA63 /* TrackupEditor */ = {
+		1FE956691A7C29570073AA63 /* Trackup Editor */ = {
 			isa = PBXGroup;
 			children = (
 				1FE9566C1A7C29590073AA63 /* AppDelegate.h */,
@@ -104,6 +137,7 @@
 				1FE956791A7C295D0073AA63 /* Main.storyboard */,
 				1FE9566A1A7C29580073AA63 /* Supporting Files */,
 			);
+			name = "Trackup Editor";
 			path = TrackupEditor;
 			sourceTree = "<group>";
 		};
@@ -116,42 +150,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1FE956831A7C29600073AA63 /* TrackupEditorTests */ = {
-			isa = PBXGroup;
-			children = (
-				1FE956861A7C29600073AA63 /* TrackupEditorTests.m */,
-				1FE956841A7C29600073AA63 /* Supporting Files */,
-			);
-			path = TrackupEditorTests;
-			sourceTree = "<group>";
-		};
-		1FE956841A7C29600073AA63 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1FE956851A7C29600073AA63 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1FE956591A7C27FD0073AA63 /* trackup */ = {
+		1FAACC4D1A8F5D6C000D938A /* trackup-tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1FE956611A7C27FE0073AA63 /* Build configuration list for PBXNativeTarget "trackup" */;
+			buildConfigurationList = 1FAACC561A8F5D6C000D938A /* Build configuration list for PBXNativeTarget "trackup-tests" */;
 			buildPhases = (
-				1FE956561A7C27FD0073AA63 /* Sources */,
-				1FE956571A7C27FD0073AA63 /* Frameworks */,
-				1FE956581A7C27FD0073AA63 /* CopyFiles */,
+				1FAACC4A1A8F5D6C000D938A /* Sources */,
+				1FAACC4B1A8F5D6C000D938A /* Frameworks */,
+				1FAACC4C1A8F5D6C000D938A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1FAACC551A8F5D6C000D938A /* PBXTargetDependency */,
 			);
-			name = trackup;
-			productName = trackup;
-			productReference = 1FE9565A1A7C27FE0073AA63 /* trackup */;
-			productType = "com.apple.product-type.tool";
+			name = "trackup-tests";
+			productName = "trackup-tests";
+			productReference = 1FAACC4E1A8F5D6C000D938A /* trackup-tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		1FE956671A7C29550073AA63 /* Trackup Editor */ = {
 			isa = PBXNativeTarget;
@@ -167,7 +185,7 @@
 			);
 			name = "Trackup Editor";
 			productName = TrackupEditor;
-			productReference = 1FE956681A7C29550073AA63 /* TrackupEditor.app */;
+			productReference = 1FE956681A7C29550073AA63 /* Trackup Editor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -179,8 +197,9 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Studio AMANgA";
 				TargetAttributes = {
-					1FE956591A7C27FD0073AA63 = {
+					1FAACC4D1A8F5D6C000D938A = {
 						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 1FE956671A7C29550073AA63;
 					};
 					1FE956671A7C29550073AA63 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -200,13 +219,20 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1FE956591A7C27FD0073AA63 /* trackup */,
 				1FE956671A7C29550073AA63 /* Trackup Editor */,
+				1FAACC4D1A8F5D6C000D938A /* trackup-tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1FAACC4C1A8F5D6C000D938A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FE956661A7C29550073AA63 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,11 +245,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1FE956561A7C27FD0073AA63 /* Sources */ = {
+		1FAACC4A1A8F5D6C000D938A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE9565E1A7C27FE0073AA63 /* main.m in Sources */,
+				1FAACC5A1A8F5D96000D938A /* TrackupParserTests.m in Sources */,
+				1FAACC5F1A8FA013000D938A /* TrackupExporterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,12 +260,23 @@
 			files = (
 				1FE956761A7C295B0073AA63 /* Document.m in Sources */,
 				1FE956731A7C295B0073AA63 /* ViewController.m in Sources */,
+				1F15EB171A7EDFEA00549BEB /* TrackupParser.m in Sources */,
 				1FE956701A7C29590073AA63 /* main.m in Sources */,
 				1FE9566E1A7C29590073AA63 /* AppDelegate.m in Sources */,
+				1F15EB1B1A7EE06200549BEB /* TrackupDocument.m in Sources */,
+				1FAACC5D1A8F9FAC000D938A /* TrackupExporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FAACC551A8F5D6C000D938A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FE956671A7C29550073AA63 /* Trackup Editor */;
+			targetProxy = 1FAACC541A8F5D6C000D938A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1FE956791A7C295D0073AA63 /* Main.storyboard */ = {
@@ -252,6 +290,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1FAACC571A8F5D6C000D938A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "trackup-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trackup Editor.app/Contents/MacOS/Trackup Editor";
+			};
+			name = Debug;
+		};
+		1FAACC581A8F5D6C000D938A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "trackup-tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trackup Editor.app/Contents/MacOS/Trackup Editor";
+			};
+			name = Release;
+		};
 		1FE9565F1A7C27FE0073AA63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -326,20 +400,6 @@
 			};
 			name = Release;
 		};
-		1FE956621A7C27FE0073AA63 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		1FE956631A7C27FE0073AA63 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		1FE956891A7C29620073AA63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -371,6 +431,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1FAACC561A8F5D6C000D938A /* Build configuration list for PBXNativeTarget "trackup-tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FAACC571A8F5D6C000D938A /* Debug */,
+				1FAACC581A8F5D6C000D938A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1FE956551A7C27FC0073AA63 /* Build configuration list for PBXProject "trackup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -380,14 +449,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1FE956611A7C27FE0073AA63 /* Build configuration list for PBXNativeTarget "trackup" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1FE956621A7C27FE0073AA63 /* Debug */,
-				1FE956631A7C27FE0073AA63 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		1FE956881A7C29620073AA63 /* Build configuration list for PBXNativeTarget "Trackup Editor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -395,6 +456,7 @@
 				1FE9568A1A7C29620073AA63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

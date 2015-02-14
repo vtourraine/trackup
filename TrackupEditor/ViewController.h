@@ -10,6 +10,7 @@
 
 @interface ViewController : NSViewController
 
+- (IBAction)exportHTML:(id)sender;
 
 @end
 
