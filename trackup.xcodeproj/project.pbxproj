@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F15EB171A7EDFEA00549BEB /* TrackupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EB151A7EDFEA00549BEB /* TrackupParser.m */; };
 		1F15EB1B1A7EE06200549BEB /* TrackupDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EB191A7EE06200549BEB /* TrackupDocument.m */; };
+		1F7FAC281A953FD3005F1533 /* TrackupDocumentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7FAC271A953FD3005F1533 /* TrackupDocumentTests.m */; };
 		1FAACC5A1A8F5D96000D938A /* TrackupParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAACC591A8F5D96000D938A /* TrackupParserTests.m */; };
 		1FAACC5D1A8F9FAC000D938A /* TrackupExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAACC5C1A8F9FAC000D938A /* TrackupExporter.m */; };
 		1FAACC5F1A8FA013000D938A /* TrackupExporterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAACC5E1A8FA013000D938A /* TrackupExporterTests.m */; };
@@ -35,6 +36,7 @@
 		1F15EB151A7EDFEA00549BEB /* TrackupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupParser.m; path = Classes/TrackupParser.m; sourceTree = "<group>"; };
 		1F15EB181A7EE06200549BEB /* TrackupDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackupDocument.h; path = Classes/TrackupDocument.h; sourceTree = "<group>"; };
 		1F15EB191A7EE06200549BEB /* TrackupDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupDocument.m; path = Classes/TrackupDocument.m; sourceTree = "<group>"; };
+		1F7FAC271A953FD3005F1533 /* TrackupDocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupDocumentTests.m; path = "trackup-tests/Tests/TrackupDocumentTests.m"; sourceTree = SOURCE_ROOT; };
 		1FAACC4E1A8F5D6C000D938A /* trackup-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "trackup-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FAACC511A8F5D6C000D938A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FAACC591A8F5D96000D938A /* TrackupParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupParserTests.m; path = "trackup-tests/Tests/TrackupParserTests.m"; sourceTree = SOURCE_ROOT; };
@@ -113,6 +115,7 @@
 			children = (
 				1F15EB181A7EE06200549BEB /* TrackupDocument.h */,
 				1F15EB191A7EE06200549BEB /* TrackupDocument.m */,
+				1F7FAC271A953FD3005F1533 /* TrackupDocumentTests.m */,
 				1F15EB141A7EDFEA00549BEB /* TrackupParser.h */,
 				1F15EB151A7EDFEA00549BEB /* TrackupParser.m */,
 				1FAACC591A8F5D96000D938A /* TrackupParserTests.m */,
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F7FAC281A953FD3005F1533 /* TrackupDocumentTests.m in Sources */,
 				1FAACC5A1A8F5D96000D938A /* TrackupParserTests.m in Sources */,
 				1FAACC5F1A8FA013000D938A /* TrackupExporterTests.m in Sources */,
 			);

@@ -44,8 +44,8 @@
     document.versions = @[version];
 
     NSString *HTMLString = [self.exporter HTMLStringFromDocument:document];
-    XCTAssertTrue([HTMLString containsString:@"<title>Test</title>"]);
-    XCTAssertTrue([HTMLString containsString:@"<h1>Test</h1>"]);
+    XCTAssertTrue([HTMLString containsString:@"<title>Test Changelog</title>"]);
+    XCTAssertTrue([HTMLString containsString:@"<h1>Test Changelog</h1>"]);
 
     XCTAssertTrue([HTMLString containsString:@"<h2>v1</h2>"]);
     XCTAssertTrue([HTMLString containsString:@"<li>Item A</li>"]);

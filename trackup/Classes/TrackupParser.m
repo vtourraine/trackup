@@ -43,6 +43,14 @@ static NSString * const TrackupItemPrefix = @"- ";
             item.title = [line substringFromIndex:TrackupItemPrefix.length];
             [currentItems addObject:item];
         }
+        else if ([line componentsSeparatedByString:@"-"].count == 3) {
+            NSArray *components = [line componentsSeparatedByString:@"-"];
+            NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+            dateComponents.year  = [components[0] integerValue];
+            dateComponents.month = [components[1] integerValue];
+            dateComponents.day   = [components[2] integerValue];
+            currentVersion.dateComponents = dateComponents;
+        }
     }
 
     if (currentVersion) {

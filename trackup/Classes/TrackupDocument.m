@@ -8,13 +8,22 @@
 
 #import "TrackupDocument.h"
 
-
 @implementation TrackupDocument
 
 @end
 
 
 @implementation TrackupVersion
+
+- (BOOL)isInProgress {
+    for (TrackupItem *item in self.items) {
+        if (item.state != TrackupItemStateUnknown) {
+            return YES;
+        }
+    }
+
+    return NO;
+}
 
 @end
 

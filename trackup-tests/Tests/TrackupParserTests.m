@@ -45,6 +45,8 @@
     NSString *string =
     @"## v1.2\n"
     @"\n"
+    @"2015-01-20\n"
+    @"\n"
     @"- Thing A\n"
     @"- Thing B\n"
     @"";
@@ -54,6 +56,10 @@
 
     TrackupVersion *version = document.versions.firstObject;
     XCTAssertEqualObjects(version.title, @"v1.2");
+
+    XCTAssertEqual(version.dateComponents.year,  2015);
+    XCTAssertEqual(version.dateComponents.month, 1);
+    XCTAssertEqual(version.dateComponents.day,   20);
 }
 
 - (void)testParseItems {

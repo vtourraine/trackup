@@ -21,7 +21,9 @@
 
 @property (copy) NSString *title;
 @property (copy) NSArray *items;
-@property (copy) NSDate *date;
+@property (copy) NSDateComponents *dateComponents;
+
+@property (readonly, getter=isInProgress) BOOL inProgress;
 
 @end
 

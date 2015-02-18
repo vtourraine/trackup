@@ -13,6 +13,10 @@
 
 @interface TrackupExporter : NSObject
 
+@property BOOL includeRoadmap;
+
+@property BOOL includeInProgressVersions;
+
 - (NSString *)HTMLStringFromDocument:(TrackupDocument *)document;
 
 @end
