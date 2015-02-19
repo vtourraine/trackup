@@ -17,6 +17,7 @@
 
 @end
 
+
 @implementation TrackupExporterTests
 
 - (void)setUp {
@@ -44,12 +45,12 @@
     document.versions = @[version];
 
     NSString *HTMLString = [self.exporter HTMLStringFromDocument:document];
-    XCTAssertTrue([HTMLString containsString:@"<title>Test Changelog</title>"]);
-    XCTAssertTrue([HTMLString containsString:@"<h1>Test Changelog</h1>"]);
+    XCTAssertTrue([HTMLString rangeOfString:@"<title>Test Changelog</title>"].location != NSNotFound);
+    XCTAssertTrue([HTMLString rangeOfString:@"<h1>Test Changelog</h1>"].location != NSNotFound);
 
-    XCTAssertTrue([HTMLString containsString:@"<h2>v1</h2>"]);
-    XCTAssertTrue([HTMLString containsString:@"<li>Item A</li>"]);
-    XCTAssertTrue([HTMLString containsString:@"<li>Item B</li>"]);
+    XCTAssertTrue([HTMLString rangeOfString:@"<h2>v1</h2>"].location != NSNotFound);
+    XCTAssertTrue([HTMLString rangeOfString:@"<li>Item A</li>"].location != NSNotFound);
+    XCTAssertTrue([HTMLString rangeOfString:@"<li>Item B</li>"].location != NSNotFound);
 }
 
 @end
