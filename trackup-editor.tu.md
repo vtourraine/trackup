@@ -4,4 +4,7 @@
 
 - Syntax coloring
 - Preferences
-- Set up CI with Travis
+
+## 1.0
+
+- [x] Set up CI with Travis
