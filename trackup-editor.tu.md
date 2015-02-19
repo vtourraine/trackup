@@ -4,3 +4,4 @@
 
 - Syntax coloring
 - Preferences
+- Set up CI with Travis
