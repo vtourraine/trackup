@@ -11,8 +11,9 @@
 #import "TrackupDocument.h"
 
 static NSString * const TrackupDocumentTitlePrefix = @"# ";
-static NSString * const TrackupVersionTitlePrefix = @"## ";
-static NSString * const TrackupItemPrefix = @"- ";
+static NSString * const TrackupDocumentURLPrefix   = @"http";
+static NSString * const TrackupVersionTitlePrefix  = @"## ";
+static NSString * const TrackupItemPrefix          = @"- ";
 
 @implementation TrackupParser
 
@@ -42,6 +43,9 @@ static NSString * const TrackupItemPrefix = @"- ";
             TrackupItem *item = [TrackupItem new];
             item.title = [line substringFromIndex:TrackupItemPrefix.length];
             [currentItems addObject:item];
+        }
+        else if ([line hasPrefix:TrackupDocumentURLPrefix] && !document.URL) {
+            document.URL = [NSURL URLWithString:line];
         }
         else if ([line componentsSeparatedByString:@"-"].count == 3) {
             NSArray *components = [line componentsSeparatedByString:@"-"];

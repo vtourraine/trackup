@@ -13,6 +13,7 @@
 
 @property (copy) NSString *title;
 @property (copy) NSArray *versions;
+@property (copy) NSURL *URL;
 
 @end
 

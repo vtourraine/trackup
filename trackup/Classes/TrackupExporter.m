@@ -70,7 +70,7 @@
             @"    <meta name=\"generator\" content=\"Trackup Editor\">\n"
             @"    <style>\n"
             @"      body {font-family: 'HelveticaNeue'; padding-bottom: 80px;}\n"
-            @"      body > * {max-width:700px; margin-left: auto; margin-right: auto;}\n"
+            @"      body > * {max-width:600px; margin-left: auto; margin-right: auto;}\n"
             @"      h1 {margin-top: 80px;}\n"
             @"      h2 {margin-top: 40px;}\n"
             @"      ul {padding-left: 20px;}\n"
@@ -78,11 +78,14 @@
             @"  </head>\n"
             @"  <body>\n"
             @"    <h1>%@ Changelog</h1>\n"
+            @"    <div><a href=\"%@\">%@</a></div>\n"
             @"    %@\n"
             @"  </body>\n"
             @"</html>",
             document.title,
             document.title,
+            document.URL.absoluteString,
+            document.URL.absoluteString,
             [versionsStrings componentsJoinedByString:@""]];
 }
 

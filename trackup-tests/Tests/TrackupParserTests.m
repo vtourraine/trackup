@@ -41,6 +41,16 @@
     XCTAssertEqualObjects(document.title, @"Test");
 }
 
+- (void)testParseURL {
+    NSString *string =
+    @"# Test\n"
+    @"\n"
+    @"http://www.test.com";
+
+    TrackupDocument *document = [self.parser documentFromString:string];
+    XCTAssertEqualObjects(document.URL.absoluteString, @"http://www.test.com");
+}
+
 - (void)testParseVersion {
     NSString *string =
     @"## v1.2\n"
