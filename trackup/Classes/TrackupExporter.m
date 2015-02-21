@@ -73,7 +73,7 @@
             @"    <meta name=\"generator\" content=\"Trackup Editor\">\n"
             @"    <meta name=\"viewport\" content=\"width=device-width\">\n"
             @"    <style>\n"
-            @"      body {font-family: 'HelveticaNeue'; padding-bottom: 80px;}\n"
+            @"      body {font-family: 'HelveticaNeue'; padding-bottom: 80px; padding-left: 10px; padding-right: 10px;}\n"
             @"      body > * {max-width:600px; margin-left: auto; margin-right: auto;}\n"
             @"      h1 {margin-top: 80px; margin-bottom: 4px;}\n"
             @"      h2 {margin-top: 40px; margin-bottom: 4px;}\n"
