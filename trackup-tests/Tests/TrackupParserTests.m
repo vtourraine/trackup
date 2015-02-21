@@ -77,7 +77,7 @@
     @"## v1.2\n"
     @"\n"
     @"- Thing A\n"
-    @"- [MAJOR] Thing B\n"
+    @"- **Thing B**\n"
     @"";
 
     TrackupDocument *document = [self.parser documentFromString:string];

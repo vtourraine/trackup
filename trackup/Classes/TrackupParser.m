@@ -14,7 +14,7 @@ static NSString * const TrackupDocumentTitlePrefix = @"# ";
 static NSString * const TrackupDocumentURLPrefix   = @"http";
 static NSString * const TrackupVersionTitlePrefix  = @"## ";
 static NSString * const TrackupItemPrefix          = @"- ";
-static NSString * const TrackupItemMajorTag        = @"[major] ";
+static NSString * const TrackupItemMajorMarkers    = @"**";
 
 @implementation TrackupParser
 
@@ -43,9 +43,10 @@ static NSString * const TrackupItemMajorTag        = @"[major] ";
         else if ([line hasPrefix:TrackupItemPrefix]) {
             TrackupItem *item = [TrackupItem new];
             NSString *title = [line substringFromIndex:TrackupItemPrefix.length];
-            if ([title rangeOfString:TrackupItemMajorTag options:NSCaseInsensitiveSearch].location == 0) {
+            if ([title hasPrefix:TrackupItemMajorMarkers] &&
+                [title hasSuffix:TrackupItemMajorMarkers]) {
                 item.status = TrackupItemStatusMajor;
-                title = [title substringFromIndex:TrackupItemMajorTag.length];
+                title = [title substringWithRange:NSMakeRange(TrackupItemMajorMarkers.length, title.length - 2*TrackupItemMajorMarkers.length)];
             }
 
             item.title = title;
