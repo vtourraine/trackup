@@ -68,8 +68,10 @@
     return [NSString stringWithFormat:
             @"<html>\n"
             @"  <head>\n"
+            @"    <meta charset=\"utf-8\">\n"
             @"    <title>%@ - Release Notes</title>\n"
             @"    <meta name=\"generator\" content=\"Trackup Editor\">\n"
+            @"    <meta name=\"viewport\" content=\"width=device-width\">\n"
             @"    <style>\n"
             @"      body {font-family: 'HelveticaNeue'; padding-bottom: 80px;}\n"
             @"      body > * {max-width:600px; margin-left: auto; margin-right: auto;}\n"
