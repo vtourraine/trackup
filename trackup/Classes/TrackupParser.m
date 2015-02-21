@@ -14,6 +14,7 @@ static NSString * const TrackupDocumentTitlePrefix = @"# ";
 static NSString * const TrackupDocumentURLPrefix   = @"http";
 static NSString * const TrackupVersionTitlePrefix  = @"## ";
 static NSString * const TrackupItemPrefix          = @"- ";
+static NSString * const TrackupItemMajorTag        = @"[major] ";
 
 @implementation TrackupParser
 
@@ -41,7 +42,13 @@ static NSString * const TrackupItemPrefix          = @"- ";
         }
         else if ([line hasPrefix:TrackupItemPrefix]) {
             TrackupItem *item = [TrackupItem new];
-            item.title = [line substringFromIndex:TrackupItemPrefix.length];
+            NSString *title = [line substringFromIndex:TrackupItemPrefix.length];
+            if ([title rangeOfString:TrackupItemMajorTag options:NSCaseInsensitiveSearch].location == 0) {
+                item.status = TrackupItemStatusMajor;
+                title = [title substringFromIndex:TrackupItemMajorTag.length];
+            }
+
+            item.title = title;
             [currentItems addObject:item];
         }
         else if ([line hasPrefix:TrackupDocumentURLPrefix] && !document.URL) {

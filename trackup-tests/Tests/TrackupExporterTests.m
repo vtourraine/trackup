@@ -39,17 +39,18 @@
     version.title = @"v1";
     TrackupItem *itemA = [TrackupItem new];
     itemA.title = @"Item A";
+    itemA.status = TrackupItemStatusMajor;
     TrackupItem *itemB = [TrackupItem new];
     itemB.title = @"Item B";
     version.items = @[itemA, itemB];
     document.versions = @[version];
 
     NSString *HTMLString = [self.exporter HTMLStringFromDocument:document];
-    XCTAssertTrue([HTMLString rangeOfString:@"<title>Test Changelog</title>"].location != NSNotFound);
-    XCTAssertTrue([HTMLString rangeOfString:@"<h1>Test Changelog</h1>"].location != NSNotFound);
+    XCTAssertTrue([HTMLString rangeOfString:@"<title>Test - Release Notes</title>"].location != NSNotFound);
+    XCTAssertTrue([HTMLString rangeOfString:@"<h1>Test Release Notes</h1>"].location != NSNotFound);
 
     XCTAssertTrue([HTMLString rangeOfString:@"<h2>v1</h2>"].location != NSNotFound);
-    XCTAssertTrue([HTMLString rangeOfString:@"<li>Item A</li>"].location != NSNotFound);
+    XCTAssertTrue([HTMLString rangeOfString:@"<li class=\"major\">Item A</li>"].location != NSNotFound);
     XCTAssertTrue([HTMLString rangeOfString:@"<li>Item B</li>"].location != NSNotFound);
 }
 

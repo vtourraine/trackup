@@ -30,7 +30,9 @@
         for (TrackupItem *item in version.items) {
             [itemsStrings addObject:
              [NSString stringWithFormat:
-              @"        <li>%@</li>\n", item.title]];
+              @"        <li%@>%@</li>\n",
+              (item.status == TrackupItemStatusMajor) ? @" class=\"major\"" : @"",
+              item.title]];
         }
 
         NSString *dateString = nil;
@@ -66,7 +68,7 @@
     return [NSString stringWithFormat:
             @"<html>\n"
             @"  <head>\n"
-            @"    <title>%@ Changelog</title>\n"
+            @"    <title>%@ - Release Notes</title>\n"
             @"    <meta name=\"generator\" content=\"Trackup Editor\">\n"
             @"    <style>\n"
             @"      body {font-family: 'HelveticaNeue'; padding-bottom: 80px;}\n"
@@ -75,10 +77,11 @@
             @"      h2 {margin-top: 40px; margin-bottom: 4px;}\n"
             @"      time {color: #888;}\n"
             @"      ul {padding-left: 20px;}\n"
+            @"      li.major {font-weight: bold;}\n"
             @"    </style>\n"
             @"  </head>\n"
             @"  <body>\n"
-            @"    <h1>%@ Changelog</h1>\n"
+            @"    <h1>%@ Release Notes</h1>\n"
             @"    <div><a href=\"%@\">%@</a></div>\n"
             @"    %@\n"
             @"  </body>\n"

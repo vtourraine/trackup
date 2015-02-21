@@ -77,7 +77,7 @@
     @"## v1.2\n"
     @"\n"
     @"- Thing A\n"
-    @"- Thing B\n"
+    @"- [MAJOR] Thing B\n"
     @"";
 
     TrackupDocument *document = [self.parser documentFromString:string];
@@ -87,7 +87,9 @@
     TrackupItem *item1 = version.items[0];
     XCTAssertEqualObjects(item1.title, @"Thing A");
     TrackupItem *item2 = version.items[1];
+    XCTAssertEqual(item1.status, TrackupItemStatusUnknown);
     XCTAssertEqualObjects(item2.title, @"Thing B");
+    XCTAssertEqual(item2.status, TrackupItemStatusMajor);
 }
 
 @end

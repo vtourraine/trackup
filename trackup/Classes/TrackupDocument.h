@@ -35,9 +35,15 @@ typedef NS_ENUM(NSUInteger, TrackupItemState) {
     TrackupItemStateDone,
 };
 
+typedef NS_ENUM(NSUInteger, TrackupItemStatus) {
+    TrackupItemStatusUnknown,
+    TrackupItemStatusMajor
+};
+
 @interface TrackupItem : NSObject
 
 @property (copy) NSString *title;
 @property (assign) TrackupItemState state;
+@property (assign) TrackupItemStatus status;
 
 @end
