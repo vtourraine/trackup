@@ -51,16 +51,20 @@
                           [dateFormatter stringFromDate:date]];
         }
 
+        NSUInteger headerLevel = ([version.title componentsSeparatedByString:@"."].count >= 3) ? 3 : 2;
+
         [versionsStrings addObject:
          [NSString stringWithFormat:
           @"    <section>\n"
-          @"      <h2>%@</h2>\n"
+          @"      <h%@>%@</h%@>\n"
           @"      %@\n"
           @"      <ul>\n"
-          @"        %@\n"
+          @"%@\n"
           @"      </ul>\n"
           @"    </section>\n",
+          @(headerLevel),
           version.title,
+          @(headerLevel),
           dateString ?: @"",
           [itemsStrings componentsJoinedByString:@""]]];
     }
