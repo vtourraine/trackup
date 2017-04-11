@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import trackup_core
+@testable import TrackupCore
 
 class trackup_coreTests: XCTestCase {
     
