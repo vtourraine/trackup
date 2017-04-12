@@ -3,7 +3,7 @@
 //  trackup
 //
 //  Created by Vincent Tourraine on 29/11/16.
-//  Copyright © 2016 Studio AMANgA. All rights reserved.
+//  Copyright © 2016-2017 Studio AMANgA. All rights reserved.
 //
 
 import Foundation
@@ -14,6 +14,8 @@ open class TrackupParser {
     let TrackupDocumentURLPrefix   = "http"
     let TrackupVersionTitlePrefix  = "## "
     let TrackupItemPrefix          = "- "
+    let TrackupItemDonePrefix      = "[x]"
+    let TrackupItemTodoPrefix      = "[ ]"
     let TrackupItemMajorMarkers    = "**"
 
     public init() {
@@ -44,6 +46,16 @@ open class TrackupParser {
             else if line.hasPrefix(TrackupItemPrefix) {
                 var item = TrackupItem()
                 var title = line.substring(from: TrackupItemPrefix.endIndex)
+
+                if title.hasPrefix(TrackupItemTodoPrefix) {
+                    item.state = .todo
+                    title = title.substring(from: TrackupItemTodoPrefix.endIndex)
+                }
+                else if title.hasPrefix(TrackupItemDonePrefix) {
+                    item.state = .done
+                    title = title.substring(from: TrackupItemDonePrefix.endIndex)
+                }
+
                 if title.hasPrefix(TrackupItemMajorMarkers) && title.hasSuffix(TrackupItemMajorMarkers) {
                     item.status = .major
                     let location = TrackupItemMajorMarkers.endIndex
@@ -52,7 +64,7 @@ open class TrackupParser {
                     title = title.substring(with: range)
                 }
 
-                item.title = title;
+                item.title = title.trimmingCharacters(in: .whitespacesAndNewlines);
                 currentItems.append(item)
             }
             else if line.hasPrefix(TrackupDocumentURLPrefix) && document.website == nil {

@@ -3,34 +3,28 @@
 //  trackup-coreTests
 //
 //  Created by Vincent Tourraine on 29/11/16.
-//  Copyright © 2016 Studio AMANgA. All rights reserved.
+//  Copyright © 2016-2017 Studio AMANgA. All rights reserved.
 //
 
 import XCTest
 @testable import TrackupCore
 
 class trackup_coreTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    func testBasicParsing() {
+        let parser = TrackupParser()
+        let document = parser.documentFromString("# Test\n\nhttp://www.website.com\n\n## 1.0\n\n- [ ] Thing\n- [x] Stuff\n")
+        XCTAssertEqual(document.title, "Test")
+        XCTAssertEqual(document.website, URL(string: "http://www.website.com"))
+        XCTAssertEqual(document.versions.count, 1)
+        XCTAssertEqual(document.versions[0].title, "1.0")
+        XCTAssertTrue(document.versions[0].inProgress())
+        XCTAssertEqual(document.versions[0].items.count, 2)
+        XCTAssertEqual(document.versions[0].items[0].title, "Thing")
+        XCTAssertEqual(document.versions[0].items[0].state, .todo)
+        XCTAssertEqual(document.versions[0].items[0].status, .unknown)
+        XCTAssertEqual(document.versions[0].items[1].title, "Stuff")
+        XCTAssertEqual(document.versions[0].items[1].state, .done)
+        XCTAssertEqual(document.versions[0].items[1].status, .unknown)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

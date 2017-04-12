@@ -18,7 +18,7 @@ public struct TrackupVersion {
     public var title: String = ""
     public var items: [TrackupItem] = []
     public var createdDate: NSDateComponents?
-    
+
     func inProgress() -> Bool {
         for item in self.items {
             if (item.state != .unknown) {

@@ -199,12 +199,13 @@
 			path = "trackup-core";
 			sourceTree = "<group>";
 		};
-		1F1A29651DEE27460004C2A1 /* trackup-coreTests */ = {
+		1F1A29651DEE27460004C2A1 /* Trackup Core Tests */ = {
 			isa = PBXGroup;
 			children = (
 				1F1A29661DEE27460004C2A1 /* trackup_coreTests.swift */,
 				1F1A29681DEE27460004C2A1 /* Info.plist */,
 			);
+			name = "Trackup Core Tests";
 			path = "trackup-coreTests";
 			sourceTree = "<group>";
 		};
@@ -299,7 +300,7 @@
 				1F1A29791DEED4CB0004C2A1 /* Trackup iOS */,
 				1FAACC4F1A8F5D6C000D938A /* Tests */,
 				1F5ADE0E1A9680F10022C1C6 /* Trackup Editor Legacy */,
-				1F1A29651DEE27460004C2A1 /* trackup-coreTests */,
+				1F1A29651DEE27460004C2A1 /* Trackup Core Tests */,
 				1FE9565B1A7C27FE0073AA63 /* Products */,
 			);
 			sourceTree = "<group>";
