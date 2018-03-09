@@ -44,7 +44,7 @@ class DocumentsListViewController: UITableViewController {
         super.viewWillAppear(animated)
     }
 
-    func insertNewObject(_ sender: Any) {
+    @objc func insertNewObject(_ sender: Any) {
         // documents.insert(NSDate(), at: 0)
         // let indexPath = IndexPath(row: 0, section: 0)
         // self.tableView.insertRows(at: [indexPath], with: .automatic)

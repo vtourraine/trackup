@@ -3,7 +3,7 @@
 //  trackup
 //
 //  Created by Vincent Tourraine on 29/11/16.
-//  Copyright © 2016-2017 Studio AMANgA. All rights reserved.
+//  Copyright © 2016-2018 Studio AMANgA. All rights reserved.
 //
 
 import Foundation
@@ -11,12 +11,12 @@ import Foundation
 open class TrackupParser {
 
     let TrackupDocumentTitlePrefix = "# "
-    let TrackupDocumentURLPrefix   = "http"
-    let TrackupVersionTitlePrefix  = "## "
-    let TrackupItemPrefix          = "- "
-    let TrackupItemDonePrefix      = "[x]"
-    let TrackupItemTodoPrefix      = "[ ]"
-    let TrackupItemMajorMarkers    = "**"
+    let TrackupDocumentURLPrefix = "http"
+    let TrackupVersionTitlePrefix = "## "
+    let TrackupItemPrefix = "- "
+    let TrackupItemDonePrefix = "[x]"
+    let TrackupItemTodoPrefix = "[ ]"
+    let TrackupItemMajorMarkers = "**"
 
     public init() {
     }
@@ -31,7 +31,7 @@ open class TrackupParser {
 
         for line in lines {
             if line.hasPrefix(TrackupDocumentTitlePrefix) {
-                document.title = line.substring(from: TrackupDocumentTitlePrefix.endIndex)
+                document.title = String(line.suffix(from: TrackupDocumentTitlePrefix.endIndex))
             }
             else if line.hasPrefix(TrackupVersionTitlePrefix) {
                 if currentVersion != nil {
@@ -40,28 +40,27 @@ open class TrackupParser {
                 }
 
                 currentVersion = TrackupVersion()
-                currentVersion?.title = line.substring(from:TrackupVersionTitlePrefix.endIndex)
+                currentVersion?.title = String(line.suffix(from: TrackupVersionTitlePrefix.endIndex))
                 currentItems = []
             }
             else if line.hasPrefix(TrackupItemPrefix) {
                 var item = TrackupItem()
-                var title = line.substring(from: TrackupItemPrefix.endIndex)
+                var title = String(line.suffix(from: TrackupItemPrefix.endIndex))
 
                 if title.hasPrefix(TrackupItemTodoPrefix) {
                     item.state = .todo
-                    title = title.substring(from: TrackupItemTodoPrefix.endIndex)
+                    title = String(title.suffix(from: TrackupItemTodoPrefix.endIndex))
                 }
                 else if title.hasPrefix(TrackupItemDonePrefix) {
                     item.state = .done
-                    title = title.substring(from: TrackupItemDonePrefix.endIndex)
+                    title = String(title.suffix(from: TrackupItemDonePrefix.endIndex))
                 }
 
                 if title.hasPrefix(TrackupItemMajorMarkers) && title.hasSuffix(TrackupItemMajorMarkers) {
                     item.status = .major
                     let location = TrackupItemMajorMarkers.endIndex
-                    let end = title.index(title.endIndex, offsetBy: -TrackupItemMajorMarkers.characters.count)
-                    let range: Range<String.Index> = location ..< end
-                    title = title.substring(with: range)
+                    let end = title.index(title.endIndex, offsetBy: -TrackupItemMajorMarkers.count)
+                    title = String(title[location ..< end])
                 }
 
                 item.title = title.trimmingCharacters(in: .whitespacesAndNewlines);
