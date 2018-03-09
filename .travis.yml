@@ -1,4 +1,4 @@
 language: objective-c
 osx_image: xcode9
 
-script: xcodebuild clean build -sdk iphonesimulator -workspace trackup.xcodeproj -scheme trackup-core CODE_SIGNING_REQUIRED=NO
+script: xcodebuild clean build -sdk iphonesimulator -project trackup.xcodeproj -scheme trackup-core CODE_SIGNING_REQUIRED=NO
