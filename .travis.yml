@@ -1,3 +1,4 @@
 language: objective-c
 xcode_project: trackup.xcodeproj
-xcode_scheme: TrackupEditorLegacy
+xcode_scheme: trackup-core
+osx_image: xcode9
