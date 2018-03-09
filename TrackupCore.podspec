@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.summary = "Markdown-based changelog/roadmap tracking."
 
   s.description  = <<-DESC
-    Markdown-based changelog/roadmap tracking.
+    Markdown-based changelog/roadmap tracking (core features only).
                    DESC
 
   s.homepage = "https://github.com/vtourraine/trackup"
@@ -22,13 +22,13 @@ Pod::Spec.new do |s|
   s.author = { "Vincent Tourraine" => "me@vtourraine.net" }
   s.social_media_url = "http://twitter.com/vtourraine"
 
-  s.ios.deployment_target = "7.0"
+  s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
   s.watchos.deployment_target = "2.0"
   s.tvos.deployment_target = "9.0"
 
   s.source = { :git => "https://github.com/vtourraine/trackup.git", :tag => "#{s.version}" }
-
   s.source_files = "trackup-core/*.swift"
+  s.swift_version = "4.0"
 
 end
