@@ -29,10 +29,13 @@ class DocumentViewController: UITableViewController {
     }
 
     @IBAction func presentDocumentWebsite(_ sender: UIBarButtonItem) {
-        if let website = representedDocument?.website {
-            let safariViewController = SFSafariViewController(url: website)
-            self.present(safariViewController, animated: true, completion: nil)
-        }
+        let controller = ChangelogViewController()
+        controller.representedDocument = representedDocument;
+        navigationController?.pushViewController(controller, animated: true)
+//        if let website = representedDocument?.website {
+//            let safariViewController = SFSafariViewController(url: website)
+//            self.present(safariViewController, animated: true, completion: nil)
+//        }
     }
 
     // MARK: - Table View
@@ -60,6 +63,7 @@ class DocumentViewController: UITableViewController {
 
         let item = representedDocument?.versions[indexPath.section].items[indexPath.row]
         cell.textLabel?.text = item?.title
+        cell.selectionStyle = .none
         return cell
     }
 }

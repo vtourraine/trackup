@@ -48,6 +48,7 @@
 		1FE956761A7C295B0073AA63 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE956751A7C295B0073AA63 /* Document.m */; };
 		1FE956781A7C295C0073AA63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956771A7C295C0073AA63 /* Images.xcassets */; };
 		1FE9567B1A7C295D0073AA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956791A7C295D0073AA63 /* Main.storyboard */; };
+		D70BD92E2052EE8300A6B0CB /* ChangelogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		1FE956751A7C295B0073AA63 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		1FE956771A7C295C0073AA63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FE9567A1A7C295D0073AA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				1F1A297A1DEED4CB0004C2A1 /* AppDelegate.swift */,
 				1F1A297C1DEED4CB0004C2A1 /* DocumentsListViewController.swift */,
 				1F1A297E1DEED4CB0004C2A1 /* DocumentViewController.swift */,
+				D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */,
 				1F1A299C1DEF34C00004C2A1 /* Documents */,
 				1F1A29801DEED4CB0004C2A1 /* Main.storyboard */,
 				1F1A29831DEED4CB0004C2A1 /* Assets.xcassets */,
@@ -627,6 +630,7 @@
 				1F1A297F1DEED4CB0004C2A1 /* DocumentViewController.swift in Sources */,
 				1F1A297D1DEED4CB0004C2A1 /* DocumentsListViewController.swift in Sources */,
 				1F1A297B1DEED4CB0004C2A1 /* AppDelegate.swift in Sources */,
+				D70BD92E2052EE8300A6B0CB /* ChangelogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
