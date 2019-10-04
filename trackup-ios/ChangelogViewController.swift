@@ -20,7 +20,7 @@ class ChangelogViewController: UITableViewController {
     }
 
     func documentReleasedVersions(document: TrackupDocument) -> [TrackupVersion] {
-        return document.versions.flatMap({ (version) -> TrackupVersion? in
+        return document.versions.compactMap({ (version) -> TrackupVersion? in
             return (version.createdDate != nil) ? version : nil
         })
     }
@@ -75,7 +75,7 @@ class ChangelogViewController: UITableViewController {
 
         for (index, item) in version.items.enumerated() {
             let weight = (item.status == .major) ? UIFont.Weight.bold : UIFont.Weight.regular
-            text.append(NSAttributedString(string: "– \(item.title)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: fontSize, weight: weight)]))
+            text.append(NSAttributedString(string: "– \(item.title)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize, weight: weight)]))
             if index != (version.items.count - 1) {
                 text.append(NSAttributedString(string: "\n"))
             }
@@ -86,6 +86,6 @@ class ChangelogViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
 }
