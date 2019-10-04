@@ -132,6 +132,8 @@
 		1FE956771A7C295C0073AA63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FE9567A1A7C295D0073AA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogViewController.swift; sourceTree = "<group>"; };
+		D78F49D6234786EF00967C9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D78F49D7234786F700967C9B /* trackup-editor.tu.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "trackup-editor.tu.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,8 @@
 		1FE956511A7C27FB0073AA63 = {
 			isa = PBXGroup;
 			children = (
+				D78F49D6234786EF00967C9B /* README.md */,
+				D78F49D7234786F700967C9B /* trackup-editor.tu.md */,
 				1F1A295A1DEE27450004C2A1 /* Trackup Core */,
 				1F5ADDEB1A967A690022C1C6 /* Trackup Core ObjC */,
 				1FE956691A7C29570073AA63 /* Trackup Editor */,
