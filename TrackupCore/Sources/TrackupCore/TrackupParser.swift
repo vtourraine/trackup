@@ -71,7 +71,7 @@ open class TrackupParser {
             }
             else if line.components(separatedBy: "-").count == 3 {
                 let components = line.components(separatedBy: "-")
-                let dateComponents = NSDateComponents()
+                var dateComponents = DateComponents()
                 dateComponents.year = Int(components[0])!
                 dateComponents.month = Int(components[1])!
                 dateComponents.day = Int(components[2])!

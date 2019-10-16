@@ -14,9 +14,17 @@ if CommandLine.arguments.count >= 2 {
     if FileManager.default.fileExists(atPath: pathArgument),
         let documentString = try? String(contentsOf: URL(fileURLWithPath: pathArgument)) {
         let document = TrackupParser().documentFromString(documentString)
-        print("\(document)")
+
+        if CommandLine.arguments.count >= 3 && CommandLine.arguments[2] == "-html" {
+            let exporter = TrackupExporter()
+            print("\(exporter.htmlPage(from: document))")
+        }
+        else {
+            print("\(document)")
+        }
     }
     else {
         print("Invalid file")
+        print("Command example: ./Trackup file.tu.md -html")
     }
 }

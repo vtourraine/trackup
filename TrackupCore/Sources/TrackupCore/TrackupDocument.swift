@@ -17,7 +17,7 @@ public struct TrackupDocument {
 public struct TrackupVersion {
     public var title: String = ""
     public var items: [TrackupItem] = []
-    public var createdDate: NSDateComponents?
+    public var createdDate: DateComponents?
 
     func inProgress() -> Bool {
         for item in self.items {
