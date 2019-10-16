@@ -3,7 +3,7 @@
 //  trackup-ios
 //
 //  Created by Vincent Tourraine on 30/11/16.
-//  Copyright © 2016 Studio AMANgA. All rights reserved.
+//  Copyright © 2016-2019 Studio AMANgA. All rights reserved.
 //
 
 import UIKit
@@ -13,13 +13,13 @@ import SafariServices
 class DocumentViewController: UITableViewController {
 
     func configureView() {
-        self.title = representedDocument?.title
-        self.tableView.reloadData()
+        title = representedDocument?.title
+        tableView.reloadData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureView()
+        configureView()
     }
 
     var representedDocument: TrackupDocument? {
@@ -29,13 +29,10 @@ class DocumentViewController: UITableViewController {
     }
 
     @IBAction func presentDocumentWebsite(_ sender: UIBarButtonItem) {
-        let controller = ChangelogViewController()
-        controller.representedDocument = representedDocument;
-        navigationController?.pushViewController(controller, animated: true)
-//        if let website = representedDocument?.website {
-//            let safariViewController = SFSafariViewController(url: website)
-//            self.present(safariViewController, animated: true, completion: nil)
-//        }
+        if let website = representedDocument?.website {
+            let safariViewController = SFSafariViewController(url: website)
+            present(safariViewController, animated: true, completion: nil)
+        }
     }
 
     // MARK: - Table View
