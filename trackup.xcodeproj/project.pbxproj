@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F15EB171A7EDFEA00549BEB /* TrackupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EB151A7EDFEA00549BEB /* TrackupParser.m */; };
-		1F15EB1B1A7EE06200549BEB /* TrackupDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F15EB191A7EE06200549BEB /* TrackupDocument.m */; };
 		1F1A297B1DEED4CB0004C2A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A297A1DEED4CB0004C2A1 /* AppDelegate.swift */; };
 		1F1A297D1DEED4CB0004C2A1 /* DocumentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A297C1DEED4CB0004C2A1 /* DocumentsListViewController.swift */; };
 		1F1A297F1DEED4CB0004C2A1 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A297E1DEED4CB0004C2A1 /* DocumentViewController.swift */; };
@@ -18,7 +16,6 @@
 		1F1A29991DEF34BB0004C2A1 /* contacts.tu.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F1A29961DEF34BB0004C2A1 /* contacts.tu.md */; };
 		1F1A299A1DEF34BB0004C2A1 /* gameskeeper.tu.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F1A29971DEF34BB0004C2A1 /* gameskeeper.tu.md */; };
 		1F1A299B1DEF34BC0004C2A1 /* onelist.tu.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F1A29981DEF34BB0004C2A1 /* onelist.tu.md */; };
-		1FAACC5D1A8F9FAC000D938A /* TrackupExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAACC5C1A8F9FAC000D938A /* TrackupExporter.m */; };
 		1FE9566E1A7C29590073AA63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE9566D1A7C29590073AA63 /* AppDelegate.m */; };
 		1FE956701A7C29590073AA63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE9566F1A7C29590073AA63 /* main.m */; };
 		1FE956731A7C295B0073AA63 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE956721A7C295B0073AA63 /* ViewController.m */; };
@@ -26,6 +23,8 @@
 		1FE956781A7C295C0073AA63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956771A7C295C0073AA63 /* Images.xcassets */; };
 		1FE9567B1A7C295D0073AA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956791A7C295D0073AA63 /* Main.storyboard */; };
 		D70BD92E2052EE8300A6B0CB /* ChangelogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */; };
+		D71C4236235DF6E600754906 /* TrackupCoreBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71C4235235DF6E600754906 /* TrackupCoreBridge.swift */; };
+		D71C4238235DF6EF00754906 /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = D71C4237235DF6EF00754906 /* TrackupCore */; };
 		D72CDFD42356F970001C69ED /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = D72CDFD32356F970001C69ED /* TrackupCore */; };
 		D72CDFDC2356FB0C001C69ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CDFDB2356FB0C001C69ED /* main.swift */; };
 		D72CDFE12356FCFD001C69ED /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = D72CDFE02356FCFD001C69ED /* TrackupCore */; };
@@ -44,10 +43,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F15EB141A7EDFEA00549BEB /* TrackupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackupParser.h; path = Classes/TrackupParser.h; sourceTree = "<group>"; };
-		1F15EB151A7EDFEA00549BEB /* TrackupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupParser.m; path = Classes/TrackupParser.m; sourceTree = "<group>"; };
-		1F15EB181A7EE06200549BEB /* TrackupDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackupDocument.h; path = Classes/TrackupDocument.h; sourceTree = "<group>"; };
-		1F15EB191A7EE06200549BEB /* TrackupDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupDocument.m; path = Classes/TrackupDocument.m; sourceTree = "<group>"; };
 		1F1A29781DEED4CB0004C2A1 /* trackup-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "trackup-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1A297A1DEED4CB0004C2A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F1A297C1DEED4CB0004C2A1 /* DocumentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsListViewController.swift; sourceTree = "<group>"; };
@@ -59,11 +54,6 @@
 		1F1A29961DEF34BB0004C2A1 /* contacts.tu.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = contacts.tu.md; path = Documents/contacts.tu.md; sourceTree = "<group>"; };
 		1F1A29971DEF34BB0004C2A1 /* gameskeeper.tu.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = gameskeeper.tu.md; path = Documents/gameskeeper.tu.md; sourceTree = "<group>"; };
 		1F1A29981DEF34BB0004C2A1 /* onelist.tu.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = onelist.tu.md; path = Documents/onelist.tu.md; sourceTree = "<group>"; };
-		1F7FAC271A953FD3005F1533 /* TrackupDocumentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupDocumentTests.m; path = "trackup-tests/Tests/TrackupDocumentTests.m"; sourceTree = SOURCE_ROOT; };
-		1FAACC591A8F5D96000D938A /* TrackupParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupParserTests.m; path = "trackup-tests/Tests/TrackupParserTests.m"; sourceTree = SOURCE_ROOT; };
-		1FAACC5B1A8F9FAC000D938A /* TrackupExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackupExporter.h; path = Classes/TrackupExporter.h; sourceTree = "<group>"; };
-		1FAACC5C1A8F9FAC000D938A /* TrackupExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupExporter.m; path = Classes/TrackupExporter.m; sourceTree = "<group>"; };
-		1FAACC5E1A8FA013000D938A /* TrackupExporterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackupExporterTests.m; path = "trackup-tests/Tests/TrackupExporterTests.m"; sourceTree = SOURCE_ROOT; };
 		1FE956681A7C29550073AA63 /* Trackup Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trackup Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE9566B1A7C29580073AA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE9566C1A7C29590073AA63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +66,8 @@
 		1FE956771A7C295C0073AA63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FE9567A1A7C295D0073AA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogViewController.swift; sourceTree = "<group>"; };
+		D71C4234235DF6E600754906 /* Trackup Editor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trackup Editor-Bridging-Header.h"; sourceTree = "<group>"; };
+		D71C4235235DF6E600754906 /* TrackupCoreBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackupCoreBridge.swift; sourceTree = "<group>"; };
 		D72CDFD12356F815001C69ED /* TrackupCore */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TrackupCore; sourceTree = "<group>"; };
 		D72CDFD92356FB0C001C69ED /* Trackup */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trackup; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72CDFDB2356FB0C001C69ED /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -96,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71C4238235DF6EF00754906 /* TrackupCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,30 +130,12 @@
 			name = Documents;
 			sourceTree = "<group>";
 		};
-		1F5ADDEB1A967A690022C1C6 /* Trackup Core ObjC */ = {
-			isa = PBXGroup;
-			children = (
-				1F15EB181A7EE06200549BEB /* TrackupDocument.h */,
-				1F15EB191A7EE06200549BEB /* TrackupDocument.m */,
-				1F7FAC271A953FD3005F1533 /* TrackupDocumentTests.m */,
-				1F15EB141A7EDFEA00549BEB /* TrackupParser.h */,
-				1F15EB151A7EDFEA00549BEB /* TrackupParser.m */,
-				1FAACC591A8F5D96000D938A /* TrackupParserTests.m */,
-				1FAACC5B1A8F9FAC000D938A /* TrackupExporter.h */,
-				1FAACC5C1A8F9FAC000D938A /* TrackupExporter.m */,
-				1FAACC5E1A8FA013000D938A /* TrackupExporterTests.m */,
-			);
-			name = "Trackup Core ObjC";
-			path = "trackup-objc";
-			sourceTree = "<group>";
-		};
 		1FE956511A7C27FB0073AA63 = {
 			isa = PBXGroup;
 			children = (
 				D72CDFD12356F815001C69ED /* TrackupCore */,
 				D78F49D6234786EF00967C9B /* README.md */,
 				D78F49D7234786F700967C9B /* trackup-editor.tu.md */,
-				1F5ADDEB1A967A690022C1C6 /* Trackup Core ObjC */,
 				1FE956691A7C29570073AA63 /* Trackup Editor */,
 				1F1A29791DEED4CB0004C2A1 /* Trackup iOS */,
 				D72CDFDA2356FB0C001C69ED /* Trackup */,
@@ -191,6 +166,8 @@
 				1FE956771A7C295C0073AA63 /* Images.xcassets */,
 				1FE956791A7C295D0073AA63 /* Main.storyboard */,
 				1FE9566A1A7C29580073AA63 /* Supporting Files */,
+				D71C4235235DF6E600754906 /* TrackupCoreBridge.swift */,
+				D71C4234235DF6E600754906 /* Trackup Editor-Bridging-Header.h */,
 			);
 			name = "Trackup Editor";
 			path = TrackupEditor;
@@ -256,6 +233,9 @@
 			dependencies = (
 			);
 			name = "Trackup Editor";
+			packageProductDependencies = (
+				D71C4237235DF6EF00754906 /* TrackupCore */,
+			);
 			productName = TrackupEditor;
 			productReference = 1FE956681A7C29550073AA63 /* Trackup Editor.app */;
 			productType = "com.apple.product-type.application";
@@ -298,6 +278,7 @@
 					};
 					1FE956671A7C29550073AA63 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1110;
 					};
 					D72CDFD82356FB0C001C69ED = {
 						CreatedOnToolsVersion = 11.1;
@@ -367,11 +348,9 @@
 			files = (
 				1FE956761A7C295B0073AA63 /* Document.m in Sources */,
 				1FE956731A7C295B0073AA63 /* ViewController.m in Sources */,
-				1F15EB171A7EDFEA00549BEB /* TrackupParser.m in Sources */,
+				D71C4236235DF6E600754906 /* TrackupCoreBridge.swift in Sources */,
 				1FE956701A7C29590073AA63 /* main.m in Sources */,
 				1FE9566E1A7C29590073AA63 /* AppDelegate.m in Sources */,
-				1F15EB1B1A7EE06200549BEB /* TrackupDocument.m in Sources */,
-				1FAACC5D1A8F9FAC000D938A /* TrackupExporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -586,6 +566,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.studioamanga.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrackupEditor/Trackup Editor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -593,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TrackupEditor/Info.plist;
@@ -602,6 +586,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.studioamanga.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TrackupEditor/Trackup Editor-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -694,6 +680,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D71C4237235DF6EF00754906 /* TrackupCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TrackupCore;
+		};
 		D72CDFD32356F970001C69ED /* TrackupCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TrackupCore;
