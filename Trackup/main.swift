@@ -25,6 +25,8 @@ if CommandLine.arguments.count >= 2 {
     }
     else {
         print("Invalid file")
-        print("Command example: ./Trackup file.tu.md -html")
     }
+}
+else {
+    print("Command example: ./Trackup file.tu.md -html")
 }

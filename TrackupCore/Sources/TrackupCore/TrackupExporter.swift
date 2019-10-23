@@ -31,7 +31,7 @@ public class TrackupExporter {
 
             for item in version.items {
                 let liClass = (item.status == .major) ? " class=\"major\"" : ""
-                itemsStrings.append("        <li\(liClass)>\(item.title)</li>\n")
+                itemsStrings.append("<li\(liClass)>\(item.title)</li>\n")
             }
 
             var dateString = ""
@@ -50,15 +50,24 @@ public class TrackupExporter {
 
             let headerLevel = (version.title.components(separatedBy: ".").count >= 3) ? 3 : 2;
 
-            versionsStrings.append("    <section><h\(headerLevel)>\(version.title)</h\(headerLevel)>\(dateString)<ul>\(itemsStrings.joined())</ul></section>")
+            versionsStrings.append("""
+                <section>
+                    <h\(headerLevel)>\(version.title)</h\(headerLevel)>
+                    \(dateString)
+                    <ul>\(itemsStrings.joined())</ul>
+                </section>\n
+                """)
         }
 
         let websiteTag: String
+        let canonicalTag: String
         if let websiteURL = document.website {
             websiteTag = "<div><a href=\"\(websiteURL.absoluteString)\">\(websiteURL.absoluteString)</a></div>"
+            canonicalTag = "<link href=\"\(websiteURL.absoluteString)/releasenotes\" rel=\"canonical\">"
         }
         else {
             websiteTag = ""
+            canonicalTag = ""
         }
 
         return """
@@ -68,6 +77,7 @@ public class TrackupExporter {
                     <title>\(document.title) - Release Notes</title>
                     <meta name=\"generator\" content=\"Trackup Editor\">
                     <meta name=\"viewport\" content=\"width=device-width\">
+                    \(canonicalTag)
                     <style>
                       body {font-family: 'HelveticaNeue'; padding-bottom: 80px; padding-left: 10px; padding-right: 10px;}
                       body > * {max-width:600px; margin-left: auto; margin-right: auto;}
