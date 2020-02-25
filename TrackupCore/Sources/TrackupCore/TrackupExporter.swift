@@ -79,7 +79,7 @@ public class TrackupExporter {
                     <meta name=\"viewport\" content=\"width=device-width\">
                     \(canonicalTag)
                     <style>
-                      body {font-family: 'HelveticaNeue'; padding-bottom: 80px; padding-left: 10px; padding-right: 10px;}
+                      body {font-family: -apple-system; padding-bottom: 80px; padding-left: 10px; padding-right: 10px;}
                       body > * {max-width:600px; margin-left: auto; margin-right: auto;}
                       h1 {margin-top: 80px; margin-bottom: 4px;}
                       h2 {margin-top: 40px; margin-bottom: 4px;}
