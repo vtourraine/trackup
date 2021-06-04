@@ -4,7 +4,17 @@ import XCTest
 final class TrackupCoreTests: XCTestCase {
     func testBasicParsing() {
         let parser = TrackupParser()
-        let document = parser.documentFromString("# Test\n\nhttp://www.website.com\n\n## 1.0\n\n- [ ] Thing\n- [x] Stuff\n")
+        let string = """
+            # Test
+
+            http://www.website.com
+
+            ## 1.0
+
+            - [ ] Thing
+            - [x] Stuff
+            """
+        let document = parser.documentFromString(string)
         XCTAssertEqual(document.title, "Test")
         XCTAssertEqual(document.website, URL(string: "http://www.website.com"))
         XCTAssertEqual(document.versions.count, 1)
@@ -17,6 +27,74 @@ final class TrackupCoreTests: XCTestCase {
         XCTAssertEqual(document.versions[0].items[1].title, "Stuff")
         XCTAssertEqual(document.versions[0].items[1].state, .done)
         XCTAssertEqual(document.versions[0].items[1].status, .unknown)
+    }
+
+    func testHTMLFormatting() {
+        let parser = TrackupParser()
+        let string = """
+            # Test
+
+            http://www.website.com
+
+            ## 1.1
+
+            - [ ] Thing
+            - [x] Stuff
+
+            ## 1.0.1
+
+            - Other
+
+            ## 1.0
+
+            2021-06-03
+
+            - Thing
+            - Stuff
+            """
+        let document = parser.documentFromString(string)
+        let exporter = TrackupExporter()
+        let html = exporter.htmlPage(from: document)
+        let expectedHTML = """
+            <html>
+              <head>
+                <meta charset="utf-8">
+                <title>Test - Release Notes</title>
+                <meta name="generator" content="Trackup Editor">
+                <meta name="viewport" content="width=device-width">
+                <link href="http://www.website.com/releasenotes" rel="canonical">
+                <style>
+                  body {font-family: -apple-system; padding-bottom: 80px; padding-left: 10px; padding-right: 10px;}
+                  body > * {max-width:600px; margin-left: auto; margin-right: auto;}
+                  h1 {margin-top: 80px; margin-bottom: 4px;}
+                  h2 {margin-top: 40px; margin-bottom: 4px;}
+                  time {color: #888;}
+                  ul {padding-left: 20px;}
+                  li.major {font-weight: bold;}
+                </style>
+              </head>
+              <body>
+                <h1>Test Release Notes</h1>
+                <div><a href="http://www.website.com">http://www.website.com</a></div>
+                <section>
+                  <h3>1.0.1</h3>
+                  <ul>
+                    <li>Other</li>
+                  </ul>
+                </section>
+                <section>
+                  <h2>1.0</h2>
+                  <time datetime="2021-6-3">3 June 2021</time>
+                  <ul>
+                    <li>Thing</li>
+                    <li>Stuff</li>
+                  </ul>
+                </section>
+              </body>
+            </html>
+            """
+
+        XCTAssertEqual(html, expectedHTML)
     }
 
     static var allTests = [

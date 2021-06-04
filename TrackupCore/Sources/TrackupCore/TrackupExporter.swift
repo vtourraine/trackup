@@ -3,7 +3,7 @@
 //  trackup
 //
 //  Created by Vincent Tourraine on 16 Oct 2019.
-//  Copyright © 2019 Studio AMANgA. All rights reserved.
+//  Copyright © 2019-2021 Studio AMANgA. All rights reserved.
 //
 
 import Foundation
@@ -31,7 +31,7 @@ public class TrackupExporter {
 
             for item in version.items {
                 let liClass = (item.status == .major) ? " class=\"major\"" : ""
-                itemsStrings.append("<li\(liClass)>\(item.title)</li>\n")
+                itemsStrings.append("        <li\(liClass)>\(item.title)</li>\n")
             }
 
             var dateString = ""
@@ -45,17 +45,25 @@ public class TrackupExporter {
                 dateFormatter.dateStyle = .long
                 let formattedDateString = dateFormatter.string(from: date)
 
-                dateString = "<time datetime=\"\(year)-\(month)-\(day)\">\(formattedDateString)</time>"
+                dateString = "      <time datetime=\"\(year)-\(month)-\(day)\">\(formattedDateString)</time>\n"
             }
 
             let headerLevel = (version.title.components(separatedBy: ".").count >= 3) ? 3 : 2;
 
             versionsStrings.append("""
-                <section>
-                    <h\(headerLevel)>\(version.title)</h\(headerLevel)>
-                    \(dateString)
-                    <ul>\(itemsStrings.joined())</ul>
-                </section>\n
+                    <section>
+                      <h\(headerLevel)>\(version.title)</h\(headerLevel)>\n
+                """)
+
+            if !dateString.isEmpty {
+                versionsStrings.append(dateString)
+            }
+
+            versionsStrings.append("""
+                      <ul>
+                \(itemsStrings.joined())\
+                      </ul>
+                    </section>\n
                 """)
         }
 
@@ -91,7 +99,7 @@ public class TrackupExporter {
                   <body>
                     <h1>\(document.title) Release Notes</h1>
                     \(websiteTag)
-                    \(versionsStrings.joined())
+                \(versionsStrings.joined())\
                   </body>
                 </html>
                 """
