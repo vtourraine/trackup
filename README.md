@@ -8,7 +8,7 @@
 - Header 2 for each version
 - Lists of items, with a checkmark for the work in progress
 
-Related blog post: [http://www.vtourraine.net/blog/2013/markdown-trackup-format]() (in French :fr:)
+Related blog post: [https://www.vtourraine.net/blog/2013/markdown-trackup-format](https://www.vtourraine.net/blog/2013/markdown-trackup-format) (in French :fr:)
 
 
 ## License
