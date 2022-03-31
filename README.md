@@ -8,8 +8,16 @@
 - Header 2 for each version
 - Lists of items, with a checkmark for the work in progress
 
-Related blog post: [https://www.vtourraine.net/blog/2013/markdown-trackup-format](https://www.vtourraine.net/blog/2013/markdown-trackup-format) (in French :fr:)
+Related blog posts (in French :fr:): 
+- [https://www.vtourraine.net/blog/2013/markdown-trackup-format](https://www.vtourraine.net/blog/2013/markdown-trackup-format)
+- [https://www.vtourraine.net/blog/2022/gestion-projet-todo-release-notes](https://www.vtourraine.net/blog/2022/gestion-projet-todo-release-notes)
 
+## Command line
+
+```
+~/Developer/Trackup GamesKeeper.tu.md -html > releasenotes.html
+~/Developer/Trackup GamesKeeper.tu.md -json > releasenotes.json
+```
 
 ## License
 
