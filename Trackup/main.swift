@@ -3,7 +3,7 @@
 //  Trackup
 //
 //  Created by Vincent Tourraine on 16/10/2019.
-//  Copyright © 2019 Studio AMANgA. All rights reserved.
+//  Copyright © 2019-2022 Studio AMANgA. All rights reserved.
 //
 
 import Foundation
@@ -14,10 +14,19 @@ if CommandLine.arguments.count >= 2 {
     if FileManager.default.fileExists(atPath: pathArgument),
         let documentString = try? String(contentsOf: URL(fileURLWithPath: pathArgument)) {
         let document = TrackupParser().documentFromString(documentString)
+        let exporter = TrackupExporter()
 
         if CommandLine.arguments.count >= 3 && CommandLine.arguments[2] == "-html" {
-            let exporter = TrackupExporter()
             print("\(exporter.htmlPage(from: document))")
+        }
+        else if CommandLine.arguments.count >= 3 && CommandLine.arguments[2] == "-json" {
+            do {
+                let json = try exporter.json(from: document)
+                print("\(json)")
+            }
+            catch {
+                print("Encoding error: \(error.localizedDescription)")
+            }
         }
         else {
             print("\(document)")

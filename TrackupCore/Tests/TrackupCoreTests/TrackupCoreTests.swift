@@ -97,6 +97,16 @@ final class TrackupCoreTests: XCTestCase {
         XCTAssertEqual(html, expectedHTML)
     }
 
+    func testJSONExport() throws {
+        let document = TrackupDocument(title: "t1", versions: [], website: URL(string: "https://www.web.site")!)
+        let exporter = TrackupExporter()
+        let json = try XCTUnwrap(exporter.json(from: document))
+        let expectedJSON = """
+            {"title":"t1","website":"https:\\/\\/www.web.site","versions":[]}
+            """
+        XCTAssertEqual(json, expectedJSON)
+    }
+
     static var allTests = [
         ("testBasicParsing", testBasicParsing),
     ]

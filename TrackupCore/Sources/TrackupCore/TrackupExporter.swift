@@ -3,7 +3,7 @@
 //  trackup
 //
 //  Created by Vincent Tourraine on 16 Oct 2019.
-//  Copyright © 2019-2021 Studio AMANgA. All rights reserved.
+//  Copyright © 2019-2022 Studio AMANgA. All rights reserved.
 //
 
 import Foundation
@@ -15,18 +15,36 @@ public class TrackupExporter {
     public init() {
     }
 
+    private func filteredDocument(_ document: TrackupDocument) -> TrackupDocument {
+        var filteredVersions = document.versions
+
+        if !includeRoadmap {
+            filteredVersions = filteredVersions.filter { $0.title != K.roadmapTitle }
+        }
+
+        if !includeInProgressVersions {
+            filteredVersions = filteredVersions.filter { !$0.inProgress() }
+        }
+
+        return TrackupDocument(title: document.title, versions: filteredVersions, website: document.website)
+    }
+
+    public func json(from document: TrackupDocument) throws -> String {
+        let encoder = JSONEncoder()
+        let jsonData = try encoder.encode(filteredDocument(document))
+        if let jsonString = String(data: jsonData, encoding: .utf8) {
+            return jsonString
+        }
+        else {
+            return ""
+        }
+    }
+
     public func htmlPage(from document: TrackupDocument) -> String {
         var versionsStrings: [String] = []
+        let filteredDocument = filteredDocument(document)
 
-        for version in document.versions {
-            if (includeRoadmap == false && version.title == "Roadmap") {
-                continue
-            }
-
-            if (includeInProgressVersions == false && version.inProgress()) {
-                continue
-            }
-
+        for version in filteredDocument.versions {
             var itemsStrings: [String] = []
 
             for item in version.items {

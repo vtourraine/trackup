@@ -3,18 +3,22 @@
 //  trackup
 //
 //  Created by Vincent Tourraine on 29/11/16.
-//  Copyright © 2016 Studio AMANgA. All rights reserved.
+//  Copyright © 2016-2022 Studio AMANgA. All rights reserved.
 //
 
 import Foundation
 
-public struct TrackupDocument {
+struct K {
+    static let roadmapTitle = "Roadmap"
+}
+
+public struct TrackupDocument: Codable {
     public var title: String = ""
     public var versions: [TrackupVersion] = []
     public var website: URL?
 }
 
-public struct TrackupVersion {
+public struct TrackupVersion: Codable {
     public var title: String = ""
     public var items: [TrackupItem] = []
     public var createdDate: DateComponents?
@@ -30,19 +34,19 @@ public struct TrackupVersion {
     }
 }
 
-public struct TrackupItem {
+public struct TrackupItem: Codable {
     public var title: String = ""
     public var state: TrackupItemState = .unknown
     public var status: TrackupItemStatus = .unknown
 }
 
-public enum TrackupItemState {
+public enum TrackupItemState: String, Codable {
     case unknown
     case todo
     case done
 }
 
-public enum TrackupItemStatus {
+public enum TrackupItemStatus: String, Codable {
     case unknown
     case major
 }
