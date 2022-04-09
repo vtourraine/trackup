@@ -22,12 +22,12 @@
 		1FE956761A7C295B0073AA63 /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE956751A7C295B0073AA63 /* Document.m */; };
 		1FE956781A7C295C0073AA63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956771A7C295C0073AA63 /* Images.xcassets */; };
 		1FE9567B1A7C295D0073AA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956791A7C295D0073AA63 /* Main.storyboard */; };
+		BB23F24E28021E5A00BA184B /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB23F24D28021E5A00BA184B /* TrackupCore */; };
+		BB23F25028021E6500BA184B /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB23F24F28021E6500BA184B /* TrackupCore */; };
 		D70BD92E2052EE8300A6B0CB /* ChangelogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */; };
 		D71C4236235DF6E600754906 /* TrackupCoreBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71C4235235DF6E600754906 /* TrackupCoreBridge.swift */; };
-		D71C4238235DF6EF00754906 /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = D71C4237235DF6EF00754906 /* TrackupCore */; };
 		D72CDFD42356F970001C69ED /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = D72CDFD32356F970001C69ED /* TrackupCore */; };
 		D72CDFDC2356FB0C001C69ED /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CDFDB2356FB0C001C69ED /* main.swift */; };
-		D72CDFE12356FCFD001C69ED /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = D72CDFE02356FCFD001C69ED /* TrackupCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,10 +65,10 @@
 		1FE956751A7C295B0073AA63 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		1FE956771A7C295C0073AA63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FE9567A1A7C295D0073AA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB23F24C28021E4C00BA184B /* Trackup-Project */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Trackup-Project"; sourceTree = "<group>"; };
 		D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogViewController.swift; sourceTree = "<group>"; };
 		D71C4234235DF6E600754906 /* Trackup Editor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trackup Editor-Bridging-Header.h"; sourceTree = "<group>"; };
 		D71C4235235DF6E600754906 /* TrackupCoreBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackupCoreBridge.swift; sourceTree = "<group>"; };
-		D72CDFD12356F815001C69ED /* TrackupCore */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TrackupCore; sourceTree = "<group>"; };
 		D72CDFD92356FB0C001C69ED /* Trackup */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trackup; sourceTree = BUILT_PRODUCTS_DIR; };
 		D72CDFDB2356FB0C001C69ED /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D78F49D6234786EF00967C9B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D71C4238235DF6EF00754906 /* TrackupCore in Frameworks */,
+				BB23F24E28021E5A00BA184B /* TrackupCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D72CDFE12356FCFD001C69ED /* TrackupCore in Frameworks */,
+				BB23F25028021E6500BA184B /* TrackupCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,9 +133,9 @@
 		1FE956511A7C27FB0073AA63 = {
 			isa = PBXGroup;
 			children = (
-				D72CDFD12356F815001C69ED /* TrackupCore */,
 				D78F49D6234786EF00967C9B /* README.md */,
 				D78F49D7234786F700967C9B /* trackup-editor.tu.md */,
+				BB23F24C28021E4C00BA184B /* Trackup-Project */,
 				1FE956691A7C29570073AA63 /* Trackup Editor */,
 				1F1A29791DEED4CB0004C2A1 /* Trackup iOS */,
 				D72CDFDA2356FB0C001C69ED /* Trackup */,
@@ -234,7 +234,7 @@
 			);
 			name = "Trackup Editor";
 			packageProductDependencies = (
-				D71C4237235DF6EF00754906 /* TrackupCore */,
+				BB23F24D28021E5A00BA184B /* TrackupCore */,
 			);
 			productName = TrackupEditor;
 			productReference = 1FE956681A7C29550073AA63 /* Trackup Editor.app */;
@@ -254,7 +254,7 @@
 			);
 			name = Trackup;
 			packageProductDependencies = (
-				D72CDFE02356FCFD001C69ED /* TrackupCore */,
+				BB23F24F28021E6500BA184B /* TrackupCore */,
 			);
 			productName = Trackup;
 			productReference = D72CDFD92356FB0C001C69ED /* Trackup */;
@@ -682,15 +682,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D71C4237235DF6EF00754906 /* TrackupCore */ = {
+		BB23F24D28021E5A00BA184B /* TrackupCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TrackupCore;
+		};
+		BB23F24F28021E6500BA184B /* TrackupCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TrackupCore;
 		};
 		D72CDFD32356F970001C69ED /* TrackupCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TrackupCore;
-		};
-		D72CDFE02356FCFD001C69ED /* TrackupCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TrackupCore;
 		};
