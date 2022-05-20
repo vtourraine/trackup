@@ -1,6 +1,6 @@
 # Trackup
 
-[![Build Status](https://travis-ci.org/vtourraine/trackup.svg?branch=master)](https://travis-ci.org/vtourraine/trackup)
+[![Build & Test](https://github.com/vtourraine/trackup/actions/workflows/swift.yml/badge.svg)](https://github.com/vtourraine/trackup/actions/workflows/swift.yml)
 
 ## How it works (short version)
 
