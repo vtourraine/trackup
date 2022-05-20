@@ -1,4 +1,0 @@
-language: objective-c
-osx_image: xcode11
-
-script: cd TrackupCore; swift test
