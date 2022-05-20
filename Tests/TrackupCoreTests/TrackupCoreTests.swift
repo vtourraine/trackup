@@ -29,7 +29,7 @@ final class TrackupCoreTests: XCTestCase {
         XCTAssertEqual(document.versions[0].items[1].status, .unknown)
     }
 
-    func testHTMLFormatting() {
+    func testHTMLFormatting() throws {
         let parser = TrackupParser()
         let string = """
             # Test
@@ -55,6 +55,14 @@ final class TrackupCoreTests: XCTestCase {
         let document = parser.documentFromString(string)
         let exporter = TrackupExporter()
         let html = exporter.htmlPage(from: document)
+
+        var dateComponents = DateComponents()
+        dateComponents.year = 2021
+        dateComponents.month = 6
+        dateComponents.day = 3
+        let date = try XCTUnwrap(Calendar.current.date(from: dateComponents))
+        let localizedDate = DateFormatter.localizedString(from: date, dateStyle: .long, timeStyle: .none)
+
         let expectedHTML = """
             <html>
               <head>
@@ -84,7 +92,7 @@ final class TrackupCoreTests: XCTestCase {
                 </section>
                 <section>
                   <h2>1.0</h2>
-                  <time datetime="2021-6-3">3 June 2021</time>
+                  <time datetime="2021-6-3">\(localizedDate)</time>
                   <ul>
                     <li>Thing</li>
                     <li>Stuff</li>
