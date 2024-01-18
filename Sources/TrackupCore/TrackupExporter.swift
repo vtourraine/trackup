@@ -40,6 +40,32 @@ public class TrackupExporter {
         }
     }
 
+    public func rss(from document: TrackupDocument) throws -> String {
+        let filteredDocument = filteredDocument(document)
+        let items = filteredDocument.versions.map { version in
+            return """
+                    <item>
+                      <title>\(version.title)</title>
+                      <description>\(version.items.map { "• \($0.title)" }.joined(separator: "\n"))</description>
+                    </item>
+                """
+        }.joined(separator: "\n")
+
+        return """
+            <?xml version="1.0"?>
+            <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+              <channel>
+                <title>\(document.title)</title>
+                <link>\(document.website?.absoluteString ?? "")</link>
+                <description>Version history for \(document.title)</description>
+                <generator>Trackup</generator>
+            \(items)
+              </channel>
+            </rss>
+
+            """
+    }
+
     public func htmlPage(from document: TrackupDocument) -> String {
         var versionsStrings: [String] = []
         let filteredDocument = filteredDocument(document)

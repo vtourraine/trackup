@@ -19,6 +19,9 @@ if CommandLine.arguments.count >= 2 {
         if CommandLine.arguments.count >= 3 && CommandLine.arguments[2] == "-html" {
             print("\(exporter.htmlPage(from: document))")
         }
+        else if CommandLine.arguments.count >= 3 && CommandLine.arguments[2] == "-rss" {
+            print("\(exporter.rss(from: document))")
+        }
         else if CommandLine.arguments.count >= 3 && CommandLine.arguments[2] == "-json" {
             do {
                 let json = try exporter.json(from: document)

@@ -17,6 +17,7 @@ Related blog posts (in French :fr:):
 ```
 ~/Developer/Trackup GamesKeeper.tu.md -html > releasenotes.html
 ~/Developer/Trackup GamesKeeper.tu.md -json > releasenotes.json
+~/Developer/Trackup GamesKeeper.tu.md -rss > releasenotes.xml
 ```
 
 ## License

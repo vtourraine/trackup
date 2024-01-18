@@ -115,6 +115,36 @@ final class TrackupCoreTests: XCTestCase {
         XCTAssertEqual(json, expectedJSON)
     }
 
+    func testRSSExport() throws {
+        let document = TrackupDocument(title: "t1", versions: [
+            TrackupVersion(title: "1.1", items: [TrackupItem(title: "Thing"), TrackupItem(title: "Other")], createdDate: nil),
+            TrackupVersion(title: "1.0", items: [TrackupItem(title: "Stuff")], createdDate: nil)
+        ], website: URL(string: "https://www.web.site")!)
+        let exporter = TrackupExporter()
+        let rss = try XCTUnwrap(exporter.rss(from: document))
+        let expectedRSS = """
+            <?xml version="1.0"?>
+            <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+              <channel>
+                <title>t1</title>
+                <link>https://www.web.site</link>
+                <description>Version history for t1</description>
+                <generator>Trackup</generator>
+                <item>
+                  <title>1.1</title>
+                  <description>• Thing\n• Other</description>
+                </item>
+                <item>
+                  <title>1.0</title>
+                  <description>• Stuff</description>
+                </item>
+              </channel>
+            </rss>
+
+            """
+        XCTAssertEqual(rss, expectedRSS)
+    }
+
     static var allTests = [
         ("testBasicParsing", testBasicParsing),
     ]
