@@ -72,7 +72,7 @@ public class TrackupExporter {
                 <link>\(document.website?.absoluteString ?? "")</link>
                 <description>Version history for \(document.title)</description>
                 <generator>Trackup</generator>
-                <atom:link href="https://www.web.site/releasenotes.xml" rel="self" type="application/rss+xml" />
+                <atom:link href="\(document.website?.absoluteString ?? "")/releasenotes.xml" rel="self" type="application/rss+xml" />
             \(items)
               </channel>
             </rss>
