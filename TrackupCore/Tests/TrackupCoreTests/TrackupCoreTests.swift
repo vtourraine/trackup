@@ -117,8 +117,8 @@ final class TrackupCoreTests: XCTestCase {
 
     func testRSSExport() throws {
         let document = TrackupDocument(title: "t1", versions: [
-            TrackupVersion(title: "1.1", items: [TrackupItem(title: "Thing"), TrackupItem(title: "Other")], createdDate: nil),
-            TrackupVersion(title: "1.0", items: [TrackupItem(title: "Stuff")], createdDate: nil)
+            TrackupVersion(title: "1.1", items: [TrackupItem(title: "Thing"), TrackupItem(title: "Other")], createdDate: DateComponents(year: 2024, month: 1, day: 19)),
+            TrackupVersion(title: "1.0", items: [TrackupItem(title: "Stuff")], createdDate: DateComponents(year: 2014, month: 1, day: 19))
         ], website: URL(string: "https://www.web.site")!)
         let exporter = TrackupExporter()
         let rss = try XCTUnwrap(exporter.rss(from: document))
@@ -130,13 +130,18 @@ final class TrackupCoreTests: XCTestCase {
                 <link>https://www.web.site</link>
                 <description>Version history for t1</description>
                 <generator>Trackup</generator>
+                <atom:link href="https://www.web.site/releasenotes.xml" rel="self" type="application/rss+xml" />
                 <item>
                   <title>1.1</title>
                   <description>• Thing\n• Other</description>
+                  <pubDate>Fri, 19 Jan 2024 00:00:00 GMT</pubDate>
+                  <guid>https://www.web.site/1.1</guid>
                 </item>
                 <item>
                   <title>1.0</title>
                   <description>• Stuff</description>
+                  <pubDate>Sun, 19 Jan 2014 00:00:00 GMT</pubDate>
+                  <guid>https://www.web.site/1.0</guid>
                 </item>
               </channel>
             </rss>

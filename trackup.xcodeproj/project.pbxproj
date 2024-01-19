@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,7 +23,7 @@
 		1FE956781A7C295C0073AA63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956771A7C295C0073AA63 /* Images.xcassets */; };
 		1FE9567B1A7C295D0073AA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE956791A7C295D0073AA63 /* Main.storyboard */; };
 		BB23F24E28021E5A00BA184B /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB23F24D28021E5A00BA184B /* TrackupCore */; };
-		BB23F25028021E6500BA184B /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB23F24F28021E6500BA184B /* TrackupCore */; };
+		BB3A015A2B597EAB00E77854 /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = BB3A01592B597EAB00E77854 /* TrackupCore */; };
 		D70BD92E2052EE8300A6B0CB /* ChangelogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */; };
 		D71C4236235DF6E600754906 /* TrackupCoreBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71C4235235DF6E600754906 /* TrackupCoreBridge.swift */; };
 		D72CDFD42356F970001C69ED /* TrackupCore in Frameworks */ = {isa = PBXBuildFile; productRef = D72CDFD32356F970001C69ED /* TrackupCore */; };
@@ -65,7 +65,7 @@
 		1FE956751A7C295B0073AA63 /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
 		1FE956771A7C295C0073AA63 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1FE9567A1A7C295D0073AA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BB23F24C28021E4C00BA184B /* Trackup-Project */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Trackup-Project"; sourceTree = "<group>"; };
+		BB3A015B2B5A81F400E77854 /* TrackupCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TrackupCore; sourceTree = "<group>"; };
 		D70BD92D2052EE8300A6B0CB /* ChangelogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogViewController.swift; sourceTree = "<group>"; };
 		D71C4234235DF6E600754906 /* Trackup Editor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Trackup Editor-Bridging-Header.h"; sourceTree = "<group>"; };
 		D71C4235235DF6E600754906 /* TrackupCoreBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackupCoreBridge.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB23F25028021E6500BA184B /* TrackupCore in Frameworks */,
+				BB3A015A2B597EAB00E77854 /* TrackupCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +135,7 @@
 			children = (
 				D78F49D6234786EF00967C9B /* README.md */,
 				D78F49D7234786F700967C9B /* trackup-editor.tu.md */,
-				BB23F24C28021E4C00BA184B /* Trackup-Project */,
+				BB3A015B2B5A81F400E77854 /* TrackupCore */,
 				1FE956691A7C29570073AA63 /* Trackup Editor */,
 				1F1A29791DEED4CB0004C2A1 /* Trackup iOS */,
 				D72CDFDA2356FB0C001C69ED /* Trackup */,
@@ -254,7 +254,7 @@
 			);
 			name = Trackup;
 			packageProductDependencies = (
-				BB23F24F28021E6500BA184B /* TrackupCore */,
+				BB3A01592B597EAB00E77854 /* TrackupCore */,
 			);
 			productName = Trackup;
 			productReference = D72CDFD92356FB0C001C69ED /* Trackup */;
@@ -608,7 +608,7 @@
 				DEVELOPMENT_TEAM = 77S3V3W24J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -633,7 +633,7 @@
 				DEVELOPMENT_TEAM = 77S3V3W24J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -686,7 +686,7 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = TrackupCore;
 		};
-		BB23F24F28021E6500BA184B /* TrackupCore */ = {
+		BB3A01592B597EAB00E77854 /* TrackupCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TrackupCore;
 		};

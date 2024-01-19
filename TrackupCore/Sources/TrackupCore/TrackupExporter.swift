@@ -40,13 +40,26 @@ public class TrackupExporter {
         }
     }
 
-    public func rss(from document: TrackupDocument) throws -> String {
+    public func rss(from document: TrackupDocument) -> String {
         let filteredDocument = filteredDocument(document)
-        let items = filteredDocument.versions.map { version in
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "GMT")!
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
+        dateFormatter.timeZone = calendar.timeZone
+
+        let items = filteredDocument.versions.compactMap { version in
+            guard let createdDate = version.createdDate,
+                  let date = calendar.date(from: createdDate) else {
+                return nil
+            }
+
             return """
                     <item>
                       <title>\(version.title)</title>
                       <description>\(version.items.map { "• \($0.title)" }.joined(separator: "\n"))</description>
+                      <pubDate>\(dateFormatter.string(from: date))</pubDate>
+                      <guid>\(document.website?.absoluteString ?? "")/\(version.title)</guid>
                     </item>
                 """
         }.joined(separator: "\n")
@@ -59,6 +72,7 @@ public class TrackupExporter {
                 <link>\(document.website?.absoluteString ?? "")</link>
                 <description>Version history for \(document.title)</description>
                 <generator>Trackup</generator>
+                <atom:link href="https://www.web.site/releasenotes.xml" rel="self" type="application/rss+xml" />
             \(items)
               </channel>
             </rss>
