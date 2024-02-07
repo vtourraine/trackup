@@ -56,8 +56,8 @@ public class TrackupExporter {
 
             return """
                     <item>
-                      <title>\(version.title)</title>
-                      <description>\(version.items.map { "• \($0.title)" }.joined(separator: "\n"))</description>
+                      <title>\(version.title.cleanForRSS())</title>
+                      <description>\(version.items.map { "• \($0.title.cleanForRSS())" }.joined(separator: "\n"))</description>
                       <pubDate>\(dateFormatter.string(from: date))</pubDate>
                       <guid>\(document.website?.absoluteString ?? "")/\(version.title)</guid>
                     </item>
@@ -161,5 +161,11 @@ public class TrackupExporter {
                   </body>
                 </html>
                 """
+    }
+}
+
+extension String {
+    func cleanForRSS() -> String {
+        return replacingOccurrences(of: "&", with: "&amp;")
     }
 }
