@@ -3,7 +3,7 @@
 //  trackup
 //
 //  Created by Vincent Tourraine on 16 Oct 2019.
-//  Copyright © 2019-2022 Studio AMANgA. All rights reserved.
+//  Copyright © 2019-2025 Studio AMANgA. All rights reserved.
 //
 
 import Foundation
@@ -31,6 +31,7 @@ public class TrackupExporter {
 
     public func json(from document: TrackupDocument) throws -> String {
         let encoder = JSONEncoder()
+        encoder.outputFormatting = [.sortedKeys, .prettyPrinted]
         let jsonData = try encoder.encode(filteredDocument(document))
         if let jsonString = String(data: jsonData, encoding: .utf8) {
             return jsonString
