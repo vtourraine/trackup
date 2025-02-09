@@ -110,7 +110,13 @@ final class TrackupCoreTests: XCTestCase {
         let exporter = TrackupExporter()
         let json = try XCTUnwrap(exporter.json(from: document))
         let expectedJSON = """
-            {"title":"t1","website":"https:\\/\\/www.web.site","versions":[]}
+            {
+              "title" : "t1",
+              "versions" : [
+
+              ],
+              "website" : "https:\\/\\/www.web.site"
+            }
             """
         XCTAssertEqual(json, expectedJSON)
     }
